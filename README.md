@@ -1,19 +1,14 @@
-Here’s a **clean, professional, resume-ready `README.md`** you can copy-paste directly.
-It’s written the way recruiters like it — clear, practical, not overhyped.
-
----
-
 # 📉 Customer Churn Prediction Web App
 
-An end-to-end **machine learning project** that predicts whether a customer is likely to churn based on demographic and usage features.
-The model is trained using classical ML techniques and deployed as an **interactive Streamlit web application**.
+An end-to-end **Machine learning project** that predicts whether a customer is likely to churn based on various input features.
+The model is trained using classical ML techniques and deployed as an **Streamlit Web application**.
 
 ---
 
 ## 🚀 Project Overview
 
-Customer churn is a critical business problem where customers discontinue a service, leading to revenue loss.
-This project aims to **predict churn in advance**, allowing businesses to take proactive retention actions.
+Customer churn is an important business problem where customers discontinue a service, leading to revenue loss.
+This project aims to **predict churn in advance**, so that the business can work on certain things to increase their customer retention.
 
 The workflow covers:
 
@@ -27,17 +22,20 @@ The workflow covers:
 ## 🧠 Problem Type
 
 * **Binary Classification**
-* Target variable: `Churn` (Yes / No)
+* Target variable: `Churn` as a Yes or No
 
 ---
 
 ## 🛠 Tech Stack
 
 * **Python**
-* **Pandas, NumPy**
+* **Pandas**
+* **NumPy**
 * **Scikit-learn**
 * **Streamlit**
 * **Joblib**
+* **Seaborn**
+* **Matplotlib**
 * **Git**
 
 ---
@@ -45,11 +43,11 @@ The workflow covers:
 ## 📊 Features Used
 
 * Age
-* Gender (encoded)
+* Gender (encoded manually)
 * Tenure
 * Monthly Charges
 
-(Additional features can be added to further improve performance.)
+(Additional features will be added to further improve performance.)
 
 ---
 
@@ -57,15 +55,15 @@ The workflow covers:
 
 1. **Data Preprocessing**
 
-   * Dropped identifier columns
-   * Encoded categorical features
-   * Scaled numerical features using a trained scaler
+   * Dropped CustomerID columns
+   * Encoded categorical features such as Gender
+   * Scaled numerical features (Age,Tenure,Monthly Charges) using a trained scaler
 
 2. **Model Training**
 
-   * Tried multiple models (Logistic Regression, KNN, SVC, etc.)
+   * Tried multiple models (Logistic Regression, KNN, SVC, Decision Tree, Random forest)
    * Used **GridSearchCV** for hyperparameter tuning
-   * Selected the best model using cross-validation
+   * Selected the best model using **GridSearchCV.best_estimator_**
 
 3. **Evaluation Metrics**
 
@@ -77,13 +75,11 @@ The workflow covers:
 
    * F1-Score
 
-   * ROC-AUC
-
    > Note: Since churn datasets are imbalanced, metrics beyond accuracy were considered.
 
 4. **Model Persistence**
 
-   * Saved trained model and scaler using `joblib`
+   * Saved trained model and scaler using `joblib as model.pkl and scaler.pkl so that they can be reused in the application`
 
 ---
 
@@ -120,7 +116,7 @@ cd customer-churn-prediction
 ### 2. Install dependencies
 
 ```bash
-pip install -r requirements.txt
+pip install -r req.txt
 ```
 
 ### 3. Run the Streamlit app
@@ -134,11 +130,11 @@ streamlit run app.py
 ## 📁 Project Structure
 
 ```
-├── app.py                # Streamlit web app
-├── model.pkl             # Trained ML model
-├── scaler.pkl            # Trained scaler
-├── requirements.txt
-├── README.md
+├── app.py            # Streamlit web app
+├── model.pkl         # Trained ML model
+├── README.md         # Readme file
+├── req.txt
+├── scaler.pkl        #Trained scaler
 ```
 
 ---
@@ -155,10 +151,9 @@ streamlit run app.py
 
 ## 🔮 Future Improvements
 
-* Add more behavioral features (Contract Type, Internet Service, etc.)
-* Show churn probability instead of just Yes/No
-* Handle class imbalance more explicitly
-* Deploy the app on a cloud platform
+* Will add more categorial features and encode them to give a better model output (Contract Type, Internet Service, etc.)
+* Handle class imbalance using SMOTE
+* Deploy the app on a cloud platform like AWS
 
 ---
 
