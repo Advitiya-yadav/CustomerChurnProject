@@ -5,7 +5,7 @@ The model is trained using classical ML techniques and deployed as an **Streamli
 
 ---
 
-## 🚀 Project Overview
+## Project Overview:
 
 Customer churn is an important business problem where customers discontinue a service, leading to revenue loss.
 This project aims to **predict churn in advance**, so that the business can work on certain things to increase their customer retention.
@@ -19,7 +19,7 @@ The workflow covers:
 
 ---
 
-## 🧠 Problem Type
+## Problem Type:
 
 * **Binary Classification**
 * Target variable: `Churn` as a Yes or No
@@ -51,7 +51,7 @@ The workflow covers:
 
 ---
 
-## ⚙️ Machine Learning Workflow
+##  Machine Learning Workflow 🤖
 
 1. **Data Preprocessing**
 
@@ -83,7 +83,7 @@ The workflow covers:
 
 ---
 
-## 🌐 Web Application (Streamlit)
+## Web Application (Streamlit)
 
 The Streamlit app allows users to:
 
@@ -104,7 +104,7 @@ The Streamlit app allows users to:
 
 ---
 
-## ▶️ How to Run the Project Locally
+## How to Run the Project Locally ❓
 
 ### 1. Clone the repository
 
@@ -139,7 +139,7 @@ streamlit run app.py
 
 ---
 
-## ✅ Key Learnings
+## 🧠 Key Learnings
 
 * Built a complete ML pipeline from scratch
 * Understood the importance of preprocessing consistency
@@ -149,7 +149,7 @@ streamlit run app.py
 
 ---
 
-## 🔮 Future Improvements
+## 🕔 Future Improvements
 
 * Will add more categorial features and encode them to give a better model output (Contract Type, Internet Service, etc.)
 * Handle class imbalance using SMOTE
@@ -157,7 +157,7 @@ streamlit run app.py
 
 ---
 
-## 📌 Conclusion
+## 📝 Conclusion
 
 This project demonstrates the ability to:
 
