@@ -105,6 +105,7 @@ The Streamlit app allows users to:
 ---
 
 ## How to Run the Project Locally ❓
+#### Will soon deploy on huggingface or streamlit cloud !
 
 ### 1. Clone the repository
 
