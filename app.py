@@ -18,8 +18,8 @@ st.subheader("🧾 Enter Customer Details")
 col1, col2 = st.columns(2)
 
 with col1:
-    age = st.number_input("Age", min_value=10, max_value=110, value=13)
-    tenure = st.number_input("Tenure (months)", min_value=0, max_value=150, value=0)
+    age = st.number_input("Age", min_value=5, max_value=110, value=10)
+    tenure = st.number_input("Tenure (months)", min_value=0, max_value=240, value=0)
 
 with col2:
     monthlycharge = st.number_input("Monthly Charges", min_value=25, max_value=100)
@@ -43,9 +43,9 @@ if predictbutton:
     predicted = "Yes" if prediction == 1 else "No"
 
     if predicted == "Yes":
-        st.error("⚠️ High Risk of Churn")
+        st.error("High Risk of Churn")
     else:
-        st.success("✅ Customer is Likely to Stay")
+        st.success("Customer is Likely to Stay")
 
     st.metric(label="Churn Prediction", value=predicted)
 
