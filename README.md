@@ -1,21 +1,20 @@
-# 📉 Customer Churn Prediction Web App
+# 📊 Customer Churn Prediction – End-to-End Machine Learning Project
+### 📌 Project Overview
 
-An end-to-end **Machine learning project** that predicts whether a customer is likely to churn based on various input features.
-The model is trained using classical ML techniques and deployed as an **Streamlit Web application**.
+Customer churn refers to customers who stop using a company’s product or service.
+Predicting churn in advance allows businesses to take proactive actions such as targeted offers, improved support, or retention campaigns.
 
----
+This project builds an end-to-end machine learning pipeline to predict customer churn using structured customer data, with a strong focus on:
 
-## Project Overview:
+* Proper data preprocessing
 
-Customer churn is an important business problem where customers discontinue a service, leading to revenue loss.
-This project aims to **predict churn in advance**, so that the business can work on certain things to increase their customer retention.
+* Handling class imbalance
 
-The workflow covers:
+* Comparing multiple ML models
 
-* Data preprocessing & feature engineering
-* Model training and evaluation
-* Hyperparameter tuning using GridSearchCV
-* Model deployment using Streamlit
+* Avoiding data leakage & overfitting
+
+Deployable, production-ready artifacts
 
 ---
 
