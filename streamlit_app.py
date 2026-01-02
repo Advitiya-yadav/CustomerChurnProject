@@ -31,7 +31,7 @@ with col2:
 
 st.divider()
 
-if st.button("Predict Churn", layout="center", size="medium"):
+if st.button("Predict Churn"):
     X = pd.DataFrame(
     [{
         "Age": age,
