@@ -1,6 +1,7 @@
 import streamlit as st
 import joblib
 import numpy as np
+import pandas as pd
 
 st.set_page_config(page_title="Customer Churn Prediction", layout="centered")
 
@@ -30,16 +31,18 @@ with col2:
 st.divider()
 
 if st.button("🔍 Predict Churn"):
-    X = [[
-        age,
-        tenure,
-        monthly_charges,
-        total_charges,
-        gender,
-        contract,
-        internet,
-        tech_support
-    ]]
+    X = pd.DataFrame(
+    [{
+        "Age": age,
+        "Tenure": tenure,
+        "MonthlyCharges": monthly_charges,
+        "TotalCharges": total_charges,
+        "Gender": gender,
+        "ContractType": contract,
+        "InternetService": internet,
+        "TechSupport": tech_support
+    }]
+)
 
     prediction = pipeline.predict(X)[0]
 
