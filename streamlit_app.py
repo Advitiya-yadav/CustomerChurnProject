@@ -5,10 +5,10 @@ import pandas as pd
 
 st.set_page_config(page_title="Customer Churn Prediction", layout="centered")
 
-# Load pipeline
+# Loading the pipeline
 pipeline = joblib.load("pipeline.pkl")
 
-st.title("📉 Customer Churn Prediction App")
+st.title("Customer Churn Prediction App 📉🌐")
 st.caption("Predict whether a customer is likely to churn")
 st.divider()
 
@@ -31,7 +31,7 @@ with col2:
 
 st.divider()
 
-if st.button("🔍 Predict Churn"):
+if st.button("Predict Churn", layout="center", size="medium"):
     X = pd.DataFrame(
     [{
         "Age": age,
