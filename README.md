@@ -1,167 +1,62 @@
-# 📊 Customer Churn Prediction – End-to-End Machine Learning Project
-### 📌 Project Overview
+# Customer Churn Prediction – Machine Learning Project
 
-Customer churn refers to customers who stop using a company’s product or service.
-Predicting churn in advance allows businesses to take proactive actions such as targeted offers, improved support, or retention campaigns.
+## 📌 Project Overview
+This project predicts whether a customer is likely to **churn (leave the service)** based on demographic, contract, and service-related features.
 
-This project builds an end-to-end machine learning pipeline to predict customer churn using structured customer data, with a strong focus on:
+The objective was to build a **reliable, interpretable, and deployable machine learning model**, while avoiding common pitfalls such as data leakage and overfitting.
 
-* Proper data preprocessing
-
-* Handling class imbalance
-
-* Comparing multiple ML models
-
-* Avoiding data leakage & overfitting
-
-Deployable, production-ready artifacts
+The final solution follows an **end-to-end ML workflow**:
+EDA → Feature Engineering → Model Selection → Evaluation → Deployment.
 
 ---
 
-## Problem Type:
+## 📊 Dataset
+- **Type:** Customer churn dataset (CSV)
+- **Target Variable:** `Churn` (`Yes` / `No`)
+- **Problem Type:** Binary Classification
 
-* **Binary Classification**
-* Target variable: `Churn` as a Yes or No
+### Key Features Used
+- Age  
+- Tenure (months)  
+- MonthlyCharges  
+- Gender  
+- ContractType  
+- InternetService  
+- TechSupport  
 
----
-
-## 🛠 Tech Stack
-
-* **Python**
-* **Pandas**
-* **NumPy**
-* **Scikit-learn**
-* **Streamlit**
-* **Joblib**
-* **Seaborn**
-* **Matplotlib**
-* **Git**
+> ⚠️ **Important:**  
+> Cumulative billing features such as `TotalCharges` were intentionally removed to avoid **target leakage**, which can artificially inflate model performance.
 
 ---
 
-## 📊 Features Used
+## 🔍 Exploratory Data Analysis (EDA)
 
-* Age
-* Gender (encoded manually)
-* Tenure
-* Monthly Charges
+EDA was performed separately to understand data distribution, class imbalance, and feature–target relationships.
 
-(Additional features will be added to further improve performance.)
+Notebook:
+- `Customer_churn_analysis_EDA.ipynb`
 
----
+### Key Insights
+- Churn is strongly associated with:
+  - Short tenure
+  - Month-to-month contracts
+  - Lack of tech support
+- The dataset is **imbalanced**, with non-churn customers being the majority
+- Certain service-related features are strong churn indicators
 
-##  Machine Learning Workflow 🤖
+## 📈 Exploratory Data Analysis (EDA)
 
-1. **Data Preprocessing**
+### Correlation
+![Correlation](images/Correlation.png)
 
-   * Dropped CustomerID columns
-   * Encoded categorical features such as Gender
-   * Scaled numerical features (Age,Tenure,Monthly Charges) using a trained scaler
+### Tenure vs Churn
+![Monthly Charges histogram distribution](images/Monthly_charges_histogram.png)
 
-2. **Model Training**
+### Contract Type 
+![Contract Type data](images/Contract_type_data_counts.png)
 
-   * Tried multiple models (Logistic Regression, KNN, SVC, Decision Tree, Random forest)
-   * Used **GridSearchCV** for hyperparameter tuning
-   * Selected the best model using **GridSearchCV.best_estimator_**
+### Tenure ( left skewed)
+![Tenure histogram](images/Tenure_histogram.png)
 
-3. **Evaluation Metrics**
-
-   * Accuracy
-
-   * Precision
-
-   * Recall
-
-   * F1-Score
-
-   > Note: Since churn datasets are imbalanced, metrics beyond accuracy were considered.
-
-4. **Model Persistence**
-
-   * Saved trained model and scaler using `joblib as model.pkl and scaler.pkl so that they can be reused in the application`
-
----
-
-## Web Application (Streamlit)
-
-The Streamlit app allows users to:
-
-* Enter customer details via a clean UI
-* Get real-time churn predictions
-* Visual feedback indicating churn risk
-
-### Example Inputs
-
-* Age
-* Gender
-* Tenure
-* Monthly Charges
-
-### Output
-
-* **Churn Prediction: Yes / No**
-
----
-
-## How to Run the Project Locally ❓
-#### Will soon deploy on huggingface or streamlit cloud !
-
-### 1. Clone the repository
-
-```bash
-git clone <your-repo-link>
-cd customer-churn-prediction
-```
-
-### 2. Install dependencies
-
-```bash
-pip install -r req.txt
-```
-
-### 3. Run the Streamlit app
-
-```bash
-streamlit run app.py
-```
-
----
-
-## 📁 Project Structure
-
-```
-├── app.py            # Streamlit web app
-├── model.pkl         # Trained ML model
-├── README.md         # Readme file
-├── req.txt
-├── scaler.pkl        #Trained scaler
-```
-
----
-
-## 🧠 Key Learnings
-
-* Built a complete ML pipeline from scratch
-* Understood the importance of preprocessing consistency
-* Learned how to avoid data leakage
-* Deployed an ML model as a usable web application
-* Gained hands-on experience with evaluation metrics for imbalanced data
-
----
-
-## 🕔 Future Improvements
-
-* Will add more categorial features and encode them to give a better model output (Contract Type, Internet Service, etc.)
-* Handle class imbalance using SMOTE
-* Deploy the app on a cloud platform like AWS
-
----
-
-## 📝 Conclusion
-
-This project demonstrates the ability to:
-
-* Solve a real-world business problem
-* Apply machine learning correctly
-* Build and deploy an end-to-end ML application
-
+### Yes and No relative count
+![Yes and No pie chart](images/Yes_No_count.png)
